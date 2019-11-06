@@ -1,1 +1,1 @@
-# Algorithm_Solving
+# Study

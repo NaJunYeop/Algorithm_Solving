@@ -40,20 +40,20 @@ void solve(int cnt, int sum)
 		ans = max(ans, sum);
 		return;
 	}
-	for (int j = 0; j < 4; j++) {
-		if (horse[j] < END) {
-			prev = horse[j];
-			for (int k = 1; k <= dice[cnt]; k++) {
-				horse[j] = index(horse[j], k);
-				horse[j]++;
+	for (int i = 0; i < 4; i++) {
+		if (horse[i] < END) {
+			prev = horse[i];
+			for (int j = 1; j <= dice[cnt]; j++) {
+				horse[i] = index(horse[i], j);
+				horse[i]++;
 			}
-			if (!is_exist(j)) {
-				horse[j] = prev;
+			if (!is_exist(i)) {
+				horse[i] = prev;
 				continue;
 			}
-			if (horse[j] > END) horse[j] = END;
-			solve(cnt + 1, sum + score[horse[j]]);
-			horse[j] = prev;
+			if (horse[i] > END) horse[i] = END;
+			solve(cnt + 1, sum + score[horse[i]]);
+			horse[i] = prev;
 		}
 	}
 }
